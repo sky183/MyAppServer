@@ -50,7 +50,7 @@
                                     <a id="centerMenu">울산센터 메뉴</a>
                                 </li>
                                 <li>
-                                    <a id="intro">재단 소개</a>
+                                    <a id="intro">재단소개</a>
                                 </li>
                             </ul>
                         </div>
