@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'notokr-regular', '돋움', Dotum, tahoma, sans-serif;
+    
+}
+a {
+    text-decoration: none !important; 
+    cursor: pointer;
+}
+li {
+    font-size: 11px;
+    font-weight: normal;
+    list-style: none;
+}
+
+body, h1, h2, h3, h4, h5, h6, div, p, span, strong, em, blockquote, pre, address, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, input, select, label, textarea, img, a {
+    margin: 0;
+    padding: 0;
+/*    border: 0px;*/
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/*임시*/
+/*
+div { 
+    border: 1px solid black;
+}
+*/
+
+
+/*title*/
+#titleWrapper {
+    max-width: 1400px;
+}
+
+#title {
+    width: 1000px;
+    padding-top: 43px;
+    margin: 0 auto;
+}
+#titleContainer {
+    position: relative;
+/*    height: 50px;*/
+}
+
+#titleTop a {
+    text-align: center;
+    font-size: 14px;
+    padding: 15px 20px 7px;
+    border: 1px solid #13518b;
+    border-radius: 0 0 20px 20px;
+    border-top: none;
+    font-weight: bold;
+    position:absolute;
+    color: #13518b;
+    top: -52px
+}
+
+#titleTop a:last-child {
+    right: 0;
+    border-color: #e93c3e;
+    color: #e93c3e;
+}
+
+.titleLeft {
+    display: inline-block;
+    background-image: url(../img/sprite.png);
+    position: relative;
+}
+
+.titleLeft {
+    background-position: 0px 0px;
+    width: 230px;
+    height: 71px;
+
+}
+.titleRight {
+    display: inline-block;
+    width: 760px;
+    height: 71px;
+    vertical-align: top;
+}
+.titleRight ul li {
+    display: inline-block;
+}
+.titleNavi a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    color: #717171;
+    font-family: notokr-medium;
+    font-weight: 600;
+}
+.titleNavi li {
+    border-left: 1px solid;
+    text-align: center;
+    padding-left: 6px;
+}
+.titleNavi li:first-child {
+    border-left: none;
+}
+.titleRight > div > div{
+    float: right;
+}
+
+.titleMenu {
+    clear: both;
+    margin-top: 30px;
+}
+
+.titleMenu a{
+    font-size: 18px;
+    font-family: notokr-medium;
+    font-weight: 600;
+    color: #000;
+    padding-bottom: 5px;
+    margin-left: 10px;
+
+}
