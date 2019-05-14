@@ -6,6 +6,7 @@
 
 body {
 	padding: 0;
+	margin-bottom: 50px !important;
 	margin: 0;
 	/* 	font-family: 'notokr-regular', '돋움', Dotum, tahoma, sans-serif; */
 }
@@ -16,7 +17,10 @@ a {
 	color: #212121;
 }
 
+select {
+	cursor: pointer;
 }
+
 li {
 	font-size: 11px;
 	font-weight: normal;
@@ -31,6 +35,39 @@ body, h1, h2, h3, h4, h5, h6, div, p, span, strong, em, blockquote, pre,
 	/*    border: 0px;*/
 	word-break: break-all;
 	word-wrap: break-word;
+}
+
+img, input, select, textarea, button {
+	border: 0;
+	vertical-align: top;
+	color: #666;
+	font-family: 'notokr-medium', '돋움', Dotum, tahoma, sans-serif;
+}
+
+input[type="text"], input[type="password"] {
+	padding: 6px 8px 6px 12px;
+	border: 1px solid #e1e1e1;
+	border-radius: 0;
+	font-size: 13px;
+	color: #717171;
+	line-height: 17px;
+	font-family: 'notokr-medium', '돋움', Dotum, tahoma, sans-serif;
+}
+
+.ib {
+	display: inline-block;
+}
+
+.icon {
+	background-image: url(../img/sprite.png);
+	display: inline-block;
+	margin-left: -2px;
+	margin-right: -2px;
+	vertical-align: middle;
+	/* 	이런식으로 사용 */
+	/* 	background-position: -113px -231px; */
+	/*  width: 35px; */
+	/*  height: 8px; */
 }
 
 /*임시*/
@@ -211,6 +248,8 @@ div {
 .imgBottom {
 	background-image: url(../img/youth_recurite.png);
 	height: 307px;
+	text-align: center;
+	padding-top: 1px;
 }
 
 .bgLeft {
@@ -218,7 +257,7 @@ div {
 	top: 0;
 	width: 50%;
 	height: 120px;
-	z-index: -1;	
+	z-index: -1;
 	left: 0;
 	background: #3a74a4;
 }
@@ -231,4 +270,161 @@ div {
 	z-index: -1;
 	right: 0;
 	background: #569ec5;
+}
+
+.bottomTitle h1 {
+	display: inline-block;
+	font-size: 30px;
+}
+
+.imgBottom h1 ~ b {
+	color: #004070;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 20px;
+}
+
+.imgBottom p {
+	color: #a9310c;
+	font-size: 17px;
+	margin-top: 20px;
+}
+
+.listSearchBox {
+	clear: both;
+	margin-top: 30px;
+	height: 59px;
+	padding: 14px 0 0 55px;
+	border: 1px solid #eceeef;
+	background-color: #f3f5f6;
+}
+
+.listSearchBox * {
+	vertical-align: middle;
+}
+
+.listSearchBox select {
+	width: 155px;
+}
+
+.listSearchBox input[type=text] {
+	width: 330px;
+	margin-right: 8px;
+}
+
+.listSearchBox label {
+	font-size: 14px;
+	color: #252525;
+	line-height: 32px;
+	font-family: notokr-bold;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.select {
+	height: 32px;
+	padding: 3px 35px 3px 12px;
+	border: 0;
+	border-radius: 0;
+	background: #fff url(../img/icoSelectBtn.gif) right 0 no-repeat;
+	font-size: 13px;
+	color: #717171;
+	line-height: 1;
+	white-space: nowrap;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+}
+
+.cd {
+	font-weight: 400 !important;
+}
+
+#boardMenu {
+	margin-top: 35px;
+}
+
+#totalCount {
+	color: #e66716;
+}
+
+#boardMenu p {
+	float: left;
+	margin: 5px 10px 0 0;
+	font-size: 13px;
+	line-height: 14px;
+	color: #424242;
+}
+
+#boardMenu #pg3 {
+	margin-left: 400px;
+}
+
+#board {
+	width: 1000px;
+	overflow: hidden;
+	margin-top: 30px;
+}
+
+.content {
+	width: 1049px;
+	overflow: hidden;
+}
+
+.list li {
+	float: left;
+	width: 212px;
+	margin-right: 49px;
+	margin-bottom: 30px;
+}
+
+.list li p {
+	overflow: hidden;
+	max-height: 40px;
+	margin: 8px 0 5px;
+	color: #212121;
+	line-height: 20px;
+	font-family: notokr-medium;
+	font-size: 12px;
+	color: #656363;
+	margin-top: 0px;
+}
+
+.list li a {
+	display: block;
+	position: relative;
+	height: 230px;
+}
+
+.list li img {
+	overflow: hidden;
+	width: 212px;
+	height: 158px;
+}
+
+.paging {
+	margin-top : 35px;
+	text-align: center;
+}
+
+.inbox {
+	display: inline-block;
+}
+
+.paging a {
+	display: block;
+	float: left;
+	width: 33px;
+	margin-left: -1px;
+	padding: 6px 0;
+	border: 1px solid #e6e6e6;
+	font-size: 14px;
+	color: #717171;
+	text-align: center;
+}
+
+.current {
+	background-color: #f3f4f6;
+    font-weight: bold;
+    color: #212121;
 }

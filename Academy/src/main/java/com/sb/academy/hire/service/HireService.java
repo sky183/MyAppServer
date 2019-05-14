@@ -1,32 +1,32 @@
 package com.sb.academy.hire.service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.mybatis.spring.SqlSessionTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sb.academy.hire.dao.HireDao;
+import com.sb.academy.hire.model.HireVO;
 import com.sb.academy.home.model.PageListView;
 
 @Repository
 public class HireService {
 
-	@Autowired
-	private SqlSessionTemplate sqlSessionTemplate;
-
-	private HireDao dao;
-
-	// loadReturnList.jsp에 값 전달
+	// loadList.jsp에 값 전달
 	@Transactional
-	public PageListView getMemberVOList(String startDate, String endDate, int pageNumber,
-			int countPerPage, int gradeNum, String search) {
+	public PageListView getList(int pageNumber, int countPerPage) {
 		
-		if (search == null || search.equals("")) {
-			search = "-1";
+		//내가 임의로 설정한 갯수
+		final int TOTAL = 34;
+		
+		//DB데이타 임의 생성
+		List<Object> list = new ArrayList<>();
+		
+		for (int i = 1; i < TOTAL; i++) {
+			list.add(new HireVO(i + ".png"));
 		}
+		
 
 		// 전체 메시지 구하기
 		// 메세지 갯수
@@ -36,43 +36,32 @@ public class HireService {
 		int currentPageNumber = pageNumber;
 
 		// 메세지가 담길 리스트
-		List<Object> objList = null;
+		List<Object> objList = new ArrayList<Object>();
 		int firstRow = 0;
 		int endRow = 0;
 
-		dao = sqlSessionTemplate.getMapper(HireDao.class);
-
-		objTotalCount = dao.selectMemberVOCount(startDate, endDate, gradeNum, search);
+		objTotalCount = TOTAL;
 
 		// 메세지 갯수가 0보다 크면 첫 행에는 표시할 페이지 -1 * 10을 한다 - 이것은 표시할 행의 시작 인덱스다.
 		// 마지막 행에는 표시할 페이지 갯수를 적는다.
 		if (objTotalCount > 0) {
 			firstRow = (pageNumber - 1) * countPerPage;
-			endRow = countPerPage;
+			endRow = firstRow + countPerPage;
+			if (endRow >= list.size()) {
+				endRow = list.size();
+			}
 			// 현재 페이지에 표시할 메세지를 가져온다.
-			objList = dao.selectMemberVOList(startDate, endDate, firstRow, endRow, gradeNum, search);
+			for (int i = firstRow; i < endRow; i++) {
+				objList.add(list.get(i));
+			}
+			
+			
 		} else {
 			currentPageNumber = 0;
 			objList = Collections.emptyList();
 		}
 
 		return new PageListView(objList, objTotalCount, currentPageNumber, countPerPage, firstRow, endRow);
-	}
-
-	// 회원등급 업데이트
-	@Transactional
-	public void changeGradeNum(List<Object> memberArray, int gradeNum) {
-
-		dao.changeGradeNum(memberArray, gradeNum);
-
-	}
-	
-	// 회원 삭제
-	@Transactional
-	public void memberDelete(List<Object> memberArray) {
-		
-		dao.memberDelete(memberArray);
-		
 	}
 
 }
