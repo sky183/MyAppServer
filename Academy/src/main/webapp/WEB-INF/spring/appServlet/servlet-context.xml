@@ -48,7 +48,8 @@
 	</beans:bean>
 
 	<!-- 파일업로드 관련 -->
-	<beans:bean id="multipartResolver"
+	<beans:bean id="
+"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="defaultEncoding">
 			<beans:value>utf-8</beans:value>
@@ -68,10 +69,10 @@
 		<beans:property name="driverClass"
 			value="net.sf.log4jdbc.DriverSpy" />
 		<beans:property name="jdbcUrl"
-			value="jdbc:log4jdbc:mysql://sb-mall.cu5prbfi9jue.ap-northeast-2.rds.amazonaws.com/SB_Master?useSSL=false&amp;characterEncoding=utf8" />
+			value="jdbc:mysql://localhost/mina?characterEncoding=utf8" />
 
-		<beans:property name="user" value="SB_Master" />
-		<beans:property name="password" value="qpqp1010-" />
+		<beans:property name="user" value="root" />
+		<beans:property name="password" value="1234" />
 	</beans:bean>
 
 	<!-- 콘솔 로그찍기 -->
@@ -109,7 +110,7 @@
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="mapperLocations">
 			<beans:list>
-				<beans:value>classpath:com/sb/academy/**/dao/*.xml</beans:value>
+				<beans:value>classpath:com/sb/academy/hire/dao/*.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>

@@ -12,27 +12,16 @@ public class HireVO {
 
 	private String content;
 	
+	private String date;
+
 	private MultipartFile file;
 
-	public HireVO(String photo) {
-		super();
-		this.photo = photo;
-	}
-
-	public String getphoto() {
-		return photo;
-	}
-
-	public void setphoto(String photo) {
-		this.photo = photo;
-	}
-
-	public int getBoarNum() {
+	public int getBoardNum() {
 		return boardNum;
 	}
 
-	public void setBoarNum(int boarNum) {
-		this.boardNum = boarNum;
+	public void setBoardNum(int boardNum) {
+		this.boardNum = boardNum;
 	}
 
 	public String getPhoto() {
@@ -66,5 +55,24 @@ public class HireVO {
 	public void setFile(MultipartFile file) {
 		this.file = file;
 	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	@Override
+	public String toString() {
+		return "HireVO [boardNum=" + boardNum + ", photo=" + photo + ", title=" + title + ", content=" + content
+				+ ", date=" + date + ", file=" + file + "]";
+	}
+	
+	
+
+
+	
 
 }

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <c:set var="viewData" value="${viewData}"/>
 
 <!-- 게시판 생성 -->
@@ -13,14 +14,17 @@
 		<c:otherwise>
 			<c:forEach var="HireVO" items="${viewData.objList}">
 				<li>
-					<a href="#">
-						<div>
-							<img alt="이미지없음" src="<%=request.getContextPath()%>/upload/${HireVO.photo}">
-							<p style="font-size: 14px; font-family: notokr-bold; font-weight: 600;">(주)회사이름</p>
-							<p>접수기간</p>
-							<p>1차 면접 : 19.01.01(월)</p>
-						</div>
-					</a>
+					<label for="${HireVO.boardNum}">
+						<a class="boardNum" name="${HireVO.boardNum}">
+							<div>
+								<img alt="이미지없음" src="${HireVO.photo}">
+								<p style="font-size: 14px; font-family: notokr-bold; font-weight: 600;">${HireVO.title}</p>
+								<p>${HireVO.content}</p>
+								<p>1차 면접 : ${HireVO.date}</p>
+							</div>
+						</a>
+					 </label>
+					<input type="checkbox" id="${HireVO.boardNum}" class="delchk" name="${HireVO.boardNum}">
 				</li>
 			</c:forEach>
 		</c:otherwise>
@@ -61,6 +65,7 @@
 		</div>
 	</c:otherwise>
 </c:choose>
+
 
 
 <script type="text/javascript">

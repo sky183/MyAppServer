@@ -4,20 +4,40 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sb.academy.hire.dao.HireDao">
 
-	<select id="selectHireVO"
-		resultType="com.sb.academy.hire.model.HireVO">
-		select * from board;
+	<!-- 총 게시글 수 -->
+	<select id="selectCount" resultType="int">
+		select count(*) from board
 	</select>
 
-	<insert id="insertHireVO"
+	<!-- 게시글 불러오기 -->
+	<select id="selectList"
+		resultType="com.sb.academy.hire.model.HireVO">
+		select * from board
+		limit #{param1},
+		#{param2};
+
+
+	</select>
+
+	<!-- 게시글 작성 -->
+	<insert id="insert"
 		parameterType="com.sb.academy.hire.model.HireVO"
 		useGeneratedKeys="true" keyProperty="boarNum">
 
 		insert into board
-		(title,content,photo)
+		(title,content,photo,date)
 		values (#{title}, #{content},
-		#{photo})
+		#{photo},#{date})
 
 	</insert>
+
+	<!-- 게시글 삭제 -->
+	<delete id="delete">
+		delete from board where
+		<foreach collection="boardArray" item="boardNum" open="("
+			close=")" separator=" OR ">
+			`boardNum` = '#{boardArray}'
+		</foreach>
+	</delete>
 
 </mapper>

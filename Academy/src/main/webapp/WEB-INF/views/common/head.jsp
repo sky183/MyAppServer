@@ -4,7 +4,7 @@
     <div id="titleWrapper">
 
         <!--        타이틀 폭 1000px;-->
-        <div id="title">
+        <div id="titleHeader">
             <div id="titleContainer">
                 <div id="titleTop">
                     <a href="#" style="right: 103px;">울산센터</a>

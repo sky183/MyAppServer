@@ -27,6 +27,12 @@ li {
 	list-style: none;
 }
 
+/* 테두리 겹치는 것 없애기 */
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
 body, h1, h2, h3, h4, h5, h6, div, p, span, strong, em, blockquote, pre,
 	address, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, input,
 	select, label, textarea, img, a {
@@ -37,7 +43,7 @@ body, h1, h2, h3, h4, h5, h6, div, p, span, strong, em, blockquote, pre,
 	word-wrap: break-word;
 }
 
-img, input, select, textarea, button {
+img, input, select, textarea {
 	border: 0;
 	vertical-align: top;
 	color: #666;
@@ -87,7 +93,7 @@ div {
 	top: 0px;
 }
 
-#title {
+#titleHeader {
 	width: 1000px;
 	padding-top: 43px;
 	margin: 0 auto;
@@ -376,12 +382,14 @@ div {
 	width: 212px;
 	margin-right: 49px;
 	margin-bottom: 30px;
+	height: 230px;
+	overflow: hidden;
 }
 
 .list li p {
 	overflow: hidden;
 	max-height: 40px;
-	margin: 8px 0 5px;
+	margin: 8px 0 0px;
 	color: #212121;
 	line-height: 20px;
 	font-family: notokr-medium;
@@ -393,7 +401,6 @@ div {
 .list li a {
 	display: block;
 	position: relative;
-	height: 230px;
 }
 
 .list li img {
@@ -403,7 +410,7 @@ div {
 }
 
 .paging {
-	margin-top : 35px;
+	margin-top: 35px;
 	text-align: center;
 }
 
@@ -425,6 +432,33 @@ div {
 
 .current {
 	background-color: #f3f4f6;
-    font-weight: bold;
-    color: #212121;
+	font-weight: bold;
+	color: #212121;
+}
+
+#writeWrap {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.board_view {
+	margin: 10px auto;
+}
+
+.board_view, .board_view * {
+	border: 1px solid black;
+	border-spacing: 0px;
+}
+
+.board_view input {
+	width: 450px;
+}
+
+.board_view .td1 {
+	width: 150px;
+}
+
+#frm {
+	width: 600px;
+	margin: 0 auto;
 }

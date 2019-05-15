@@ -99,6 +99,8 @@
 			<a id="pg5" class="row" name="5"> 
 				<img src="<%=request.getContextPath()%>/img/icon_5page.png" alt="이미지없음">
 			</a>
+			<button type="button" id="bdwrite" style="margin-left : 93px;">글쓰기</button>
+			<button type="button" id="dbdelete">삭제</button>
 		</div>
 		
 		<input type="hidden" id="rowNum" name="3">
@@ -121,6 +123,11 @@ $(document).ready(function(){
 		'<%=request.getContextPath()%>/hire/notify/loadList?pageNumber=1&rowNum=3'
 	);
 	
+	$('#bdwrite').click(function() {
+		
+		location.href = '<%=request.getContextPath()%>/hire/notify/write';
+		
+	});
 	
 	
 	
