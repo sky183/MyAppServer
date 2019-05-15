@@ -21,7 +21,7 @@ public class UploadService {
 		String filename = UUID.randomUUID().toString() + file.getOriginalFilename();
 
 		// 저장될 실제 폴더 경로+ 파일 이름
-		String filepath = "/upload/" + filename;
+		String filepath = request.getSession().getServletContext().getRealPath("/upload/") + filename;
 
 		// 경로를 이용하여 새 파일 생성 (저장 전)
 		File f = new File(filepath);

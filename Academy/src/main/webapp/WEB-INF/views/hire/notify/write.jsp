@@ -18,7 +18,7 @@
 
 	<div id="writeWrap">
 		<div style="padding-top: 40px; padding-bottom: 22px; font-size: 22px; font-weight: bold; text-align: center;">게시글 작성</div>
-		<form method="post" id="frm" enctype="multipart/form-data" >
+		<form id="frm" method="post" enctype="multipart/form-data" >
 			<table class="board_view">
 				<tbody>
 					<tr>
@@ -36,16 +36,12 @@
 					</tr>
 				</tbody>
 			</table>
-			<input type="file" name="file"> <br /> <br />
+			<input type="file" name="file"> <br/> <br/>
 			<div style="float: right">
-				<button type="button" id="write">작성하기</button>
+				<button type="submit" id="write">작성하기</button>
 				<button type="button" id="back">목록으로</button>
 			</div>
-
 		</form>
-
-
-		<!-- 		wrap의 끝 -->
 	</div>
 
 </body>
@@ -53,13 +49,6 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-	
-	
-	$('#write').click(function() {
-		
-		$('#frm').submit();
-		
-	});
 	
 	
 	$('#back').click(function() {

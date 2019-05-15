@@ -59,6 +59,8 @@ public class HireService {
 	// 글쓰기
 	@Transactional
 	public void write(HireVO hireVO) {
+		
+		dao = sessionTemplate.getMapper(HireDao.class);
 
 		dao.insert(hireVO);
 
@@ -67,6 +69,8 @@ public class HireService {
 	// 글 삭제
 	@Transactional
 	public void delete(List<Object> boardArray) {
+		
+		dao = sessionTemplate.getMapper(HireDao.class);
 		
 		dao.delete(boardArray);
 

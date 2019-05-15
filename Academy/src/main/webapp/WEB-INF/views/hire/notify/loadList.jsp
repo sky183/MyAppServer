@@ -24,7 +24,7 @@
 							</div>
 						</a>
 					 </label>
-					<input type="checkbox" id="${HireVO.boardNum}" class="delchk" name="${HireVO.boardNum}">
+					<input type="checkbox" id="${HireVO.boardNum}" class="delchk" name="delchk" value="${HireVO.boardNum}">
 				</li>
 			</c:forEach>
 		</c:otherwise>
@@ -72,11 +72,50 @@
 
 $(document).ready(function(){
 	
+	//선택한 회원을 탈퇴처리
+	$('#dbdelete').off('click').on('click', function(){
+		
+			//선택한 항목을 배열로 만들어준다.
+		    var boardlength = $("input[name='delchk']:checked").length;
+			if (boardlength > 0) {
+				var delOK;
+				delOK =	confirm('정말 삭제하시겠습니까??');
+				if (delOK) {
+				    var boardArray = new Array(boardlength);
+				    for(var i=0; i<boardlength; i++){                          
+				    	boardArray[i] = $("input[name='delchk']:checked")[i].value;
+				    }
+					
+						$.ajax({
+							url : '<%=request.getContextPath()%>/hire/notify/delete',
+							method : 'POST',
+							type: "json",
+							data : JSON.stringify(boardArray),
+							contentType: "application/json",
+							error : function(error) {
+						        alert("Error!");
+						    },
+							success : function(data) {
+								alert(data);
+								//기본 화면으로 불러온다. 
+								location.href = '<%=request.getContextPath()%>/hire/notify'
+							}
+						});
+					
+				};
+			} else {
+				alert("선택된 게시물이 없습니다.");
+			}
+		
+	});
+	
 	$('#totalCount').html(${viewData.objTotalCount});
 	
 	$('#pageNum').html(${viewData.currentPageNumber});
 	
 	$('#totalPage').html(${viewData.pageTotalCount});
+	
+	
 	
 	//리스트를 불러오는 함수
 	function loadList(pageNumber, rowNum){

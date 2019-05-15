@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -70,7 +71,7 @@ public class HireController {
 
 	// 파일 업로드 및 게시글 올리기
 	@RequestMapping(value = "/hire/notify/write", method = RequestMethod.POST)
-	public ModelAndView write(HireVO hireVO, HttpServletRequest request, HttpServletResponse response)
+	public ModelAndView write(@ModelAttribute HireVO hireVO, HttpServletRequest request, HttpServletResponse response)
 			throws IllegalStateException, IOException {
 
 		// 글 작성 후 notify 페이지로 다시 이동
@@ -89,7 +90,7 @@ public class HireController {
 	}
 
 	// 글 삭제 (여러 글 삭제 가능)
-	@RequestMapping(value = "/hire/notify/delete", method = RequestMethod.POST)
+	@RequestMapping(value = "/hire/notify/delete", produces = "application/text; charset=utf8", method = RequestMethod.POST)
 	@ResponseBody
 	public String delete(@RequestBody List<Object> boardArray) {
 

@@ -48,8 +48,7 @@
 	</beans:bean>
 
 	<!-- 파일업로드 관련 -->
-	<beans:bean id="
-"
+	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="defaultEncoding">
 			<beans:value>utf-8</beans:value>
@@ -72,7 +71,7 @@
 			value="jdbc:mysql://localhost/mina?characterEncoding=utf8" />
 
 		<beans:property name="user" value="root" />
-		<beans:property name="password" value="1234" />
+		<beans:property name="password" value="qpqp1010" />
 	</beans:bean>
 
 	<!-- 콘솔 로그찍기 -->

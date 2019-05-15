@@ -25,9 +25,8 @@
 		useGeneratedKeys="true" keyProperty="boarNum">
 
 		insert into board
-		(title,content,photo,date)
-		values (#{title}, #{content},
-		#{photo},#{date})
+		(title,content,photo)
+		values (#{title}, #{content}, #{photo})
 
 	</insert>
 
@@ -36,7 +35,7 @@
 		delete from board where
 		<foreach collection="boardArray" item="boardNum" open="("
 			close=")" separator=" OR ">
-			`boardNum` = '#{boardArray}'
+			`boardNum` = '${boardNum}'
 		</foreach>
 	</delete>
 

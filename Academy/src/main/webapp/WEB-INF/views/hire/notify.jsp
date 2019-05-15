@@ -85,10 +85,10 @@
 
 		<div id="boardMenu">
 			<p>
-				총 게시물 <span id="totalCount">845</span>건
+				총 게시물 <span id="totalCount"></span>건
 			</p>
 			<p>
-				페이지 <span id="pageNum">1</span>/<span id="totalPage">71</span>건
+				페이지 <span id="pageNum"></span>/<span id="totalPage"></span>건
 			</p>
 			<a id="pg3" class="row" name="3"> 
 				<img src="<%=request.getContextPath()%>/img/icon_3page.png" alt="이미지없음">
