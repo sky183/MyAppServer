@@ -15,7 +15,7 @@
 				<li>
 					<a href="#">
 						<div>
-							<img alt="이미지없음" src="<%=request.getContextPath()%>/upload/${HireVO.imgName}">
+							<img alt="이미지없음" src="<%=request.getContextPath()%>/upload/${HireVO.photo}">
 							<p style="font-size: 14px; font-family: notokr-bold; font-weight: 600;">(주)회사이름</p>
 							<p>접수기간</p>
 							<p>1차 면접 : 19.01.01(월)</p>

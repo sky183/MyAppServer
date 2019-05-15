@@ -4,29 +4,36 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sb.academy.hire.dao.HireDao;
 import com.sb.academy.hire.model.HireVO;
 import com.sb.academy.home.model.PageListView;
 
 @Repository
 public class HireService {
 
+	@Autowired
+	SqlSessionTemplate sessionTemplate;
+
+	private HireDao dao;
+
 	// loadList.jsp에 값 전달
 	@Transactional
 	public PageListView getList(int pageNumber, int countPerPage) {
-		
-		//내가 임의로 설정한 갯수
+
+		// 내가 임의로 설정한 갯수
 		final int TOTAL = 34;
-		
-		//DB데이타 임의 생성
+
+		// DB데이타 임의 생성
 		List<Object> list = new ArrayList<>();
-		
+
 		for (int i = 1; i < TOTAL; i++) {
 			list.add(new HireVO(i + ".png"));
 		}
-		
 
 		// 전체 메시지 구하기
 		// 메세지 갯수
@@ -54,14 +61,23 @@ public class HireService {
 			for (int i = firstRow; i < endRow; i++) {
 				objList.add(list.get(i));
 			}
-			
-			
+
 		} else {
 			currentPageNumber = 0;
 			objList = Collections.emptyList();
 		}
 
 		return new PageListView(objList, objTotalCount, currentPageNumber, countPerPage, firstRow, endRow);
+	}
+
+	// hireVO DB에 저장
+	@Transactional
+	public void boardWrite(HireVO hireVO) {
+
+		sessionTemplate.getMapper(HireDao.class);
+
+		dao.insertHireVO(hireVO);
+
 	}
 
 }
