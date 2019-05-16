@@ -119,7 +119,7 @@
 
 <script type="text/javascript">
 
-$(document).ready(function(){
+// $(document).ready(function(){
 	
 	$('#board').load(
 		'<%=request.getContextPath()%>/hire/notify2/loadList2?pageNumber=1&rowNum=3'
@@ -133,7 +133,7 @@ $(document).ready(function(){
 	
 	
 	
-});
+// });
 </script>
 
 </html>

@@ -71,7 +71,7 @@
 			value="jdbc:mysql://localhost/mina?characterEncoding=utf8" />
 
 		<beans:property name="user" value="root" />
-		<beans:property name="password" value="1234" />
+		<beans:property name="password" value="qpqp1010" />
 	</beans:bean>
 
 	<!-- 콘솔 로그찍기 -->

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sb.academy.hire.model.HireVO;
@@ -104,6 +105,14 @@ public class HireController {
 	
 	
 	// 모바일용 
+	// 페이지 이동
+	@RequestMapping(value = "/hire/notify2", method = RequestMethod.GET)
+	public String notified2() {
+
+		return "hire/notify2";
+	}
+	
+	
 	// 게시판 불러오기
 	@RequestMapping(value = "/hire/notify2/loadList2", method = RequestMethod.GET)
 	public ModelAndView loadList2(@RequestParam(value = "pageNumber", defaultValue = "1") int pageNumber,
@@ -135,7 +144,7 @@ public class HireController {
 
 	// 파일 업로드 및 게시글 올리기
 	@RequestMapping(value = "/hire/notify2/write2", method = RequestMethod.POST)
-	public String write2(@ModelAttribute HireVO hireVO, HttpServletRequest request, HttpServletResponse response)
+	public String write2(HireVO hireVO, MultipartFile file, HttpServletRequest request, HttpServletResponse response)
 			throws IllegalStateException, IOException {
 
 		// 파일을 서버에 업로드 및 저장된 파일 경로 구하기
@@ -152,7 +161,7 @@ public class HireController {
 		}
 		
 		// 글 작성 후 notify 페이지로 다시 이동
-		return "redirect:/hire/notify2";
+		return "등록 성공";
 	}
 
 }
