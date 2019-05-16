@@ -7,17 +7,16 @@
 <head>
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, 
   maximum-scale=1.0, minimum-scale=1.0">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/main.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/main2.css">
 <link rel="shortcut icon"
 	href="<%=request.getContextPath()%>/img/favicon_yhf.ico">
 <title>청년 재단</title>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
-<!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
-<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-	<%@ include file="/WEB-INF/views/common/head.jsp"%>
+	<%@ include file="/WEB-INF/views/common/head2.jsp"%>
 	<div class="snbVisual">
 		<div class="bgLeft hide"></div>
 		<div class="bgRight hide"></div>
@@ -72,8 +71,7 @@
 				<option>제목</option>
 				<option>내용</option>
 			</select> <input id="queryStr2" type="text" title="제목 또는 내용 검색어를 입력하세요."
-				placeholder="검색어를 입력하세요."> <span class="icon"
-				style="background-position: -392px -250px; width: 31px; height: 31px;"></span>
+				placeholder="검색어를 입력하세요."> 
 		</div>
 
 		<div class="listSearchBox hide" >
@@ -124,12 +122,12 @@
 $(document).ready(function(){
 	
 	$('#board').load(
-		'<%=request.getContextPath()%>/hire/notify/loadList?pageNumber=1&rowNum=3'
+		'<%=request.getContextPath()%>/hire/notify2/loadList2?pageNumber=1&rowNum=3'
 	);
 	
 	$('#bdwrite').click(function() {
 		
-		location.href = '<%=request.getContextPath()%>/hire/notify/write';
+		location.href = '<%=request.getContextPath()%>/hire/notify2/write2';
 		
 	});
 	

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 	<!--타이틀 래퍼-->
-    <div id="titleWrapper">
+    <div>
 
         <!--        타이틀 폭 1000px;-->
         <div id="titleHeader">

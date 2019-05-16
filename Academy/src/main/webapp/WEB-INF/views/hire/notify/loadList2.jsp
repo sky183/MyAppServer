@@ -101,7 +101,7 @@ $(document).ready(function(){
 							success : function(data) {
 								alert(data);
 								//기본 화면으로 불러온다. 
-								location.href = '<%=request.getContextPath()%>/hire/notify'
+								location.href = '<%=request.getContextPath()%>/hire/notify2'
 							}
 						});
 					
@@ -126,7 +126,7 @@ $(document).ready(function(){
 		$(this).unbind();	
 		
 		$.ajax({
-			url : '<%=request.getContextPath()%>/hire/notify/loadList?pageNumber='+ pageNumber 
+			url : '<%=request.getContextPath()%>/hire/notify2/loadList2?pageNumber='+ pageNumber 
 				+ '&rowNum=' + rowNum,
 			type : 'GET',
 			error : function(error) {

@@ -100,5 +100,59 @@ public class HireController {
 
 		return "삭제 완료!";
 	}
+	
+	
+	
+	// 모바일용 
+	// 게시판 불러오기
+	@RequestMapping(value = "/hire/notify2/loadList2", method = RequestMethod.GET)
+	public ModelAndView loadList2(@RequestParam(value = "pageNumber", defaultValue = "1") int pageNumber,
+			@RequestParam(value = "rowNum", defaultValue = "3") int rowNum) {
+
+		// 수동으로 입력한 객체의 페이지 갯수
+		int count_per_page = rowNum * 4;
+
+		ModelAndView modelAndView = new ModelAndView();
+
+		// loadReturnList.jsp 에 넣을 객체를 받아온다.
+		PageListView viewData = service.getList(pageNumber, count_per_page);
+
+		modelAndView.addObject("viewData", viewData);
+
+		modelAndView.setViewName("/hire/notify/loadList2");
+
+		return modelAndView;
+	}
+
+	// 글쓰기 페이지 전환
+	@RequestMapping(value = "/hire/notify2/write2", method = RequestMethod.GET)
+	public ModelAndView write2() {
+
+		ModelAndView modelAndView = new ModelAndView("/hire/notify/write2");
+
+		return modelAndView;
+	}
+
+	// 파일 업로드 및 게시글 올리기
+	@RequestMapping(value = "/hire/notify2/write2", method = RequestMethod.POST)
+	public String write2(@ModelAttribute HireVO hireVO, HttpServletRequest request, HttpServletResponse response)
+			throws IllegalStateException, IOException {
+
+		// 파일을 서버에 업로드 및 저장된 파일 경로 구하기
+		String photo = fileService.imgUpload(hireVO.getFile(), request, response);
+
+		// hireVO에 파일 경로 저장
+		hireVO.setPhoto(photo);
+
+		try {
+			// 글쓰기
+			service.write(hireVO);
+		} catch (Exception e) {
+			
+		}
+		
+		// 글 작성 후 notify 페이지로 다시 이동
+		return "redirect:/hire/notify2";
+	}
 
 }
