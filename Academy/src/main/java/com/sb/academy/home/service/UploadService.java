@@ -39,7 +39,7 @@ public class UploadService {
 			throw e;
 		}
 		// DB에 저장될 웹경로(파일의 주소) 리턴 - 필요한 경우만 사용
-		String sqlpath = ("http://localhost/academy/upload/" + filename).trim();
+		String sqlpath = ("http://192.168.0.10/academy/upload/" + filename).trim();
 		return sqlpath;
 	};
 

@@ -71,11 +71,8 @@ public class HireController {
 
 	// 파일 업로드 및 게시글 올리기
 	@RequestMapping(value = "/hire/notify/write", method = RequestMethod.POST)
-	public ModelAndView write(@ModelAttribute HireVO hireVO, HttpServletRequest request, HttpServletResponse response)
+	public String write(@ModelAttribute HireVO hireVO, HttpServletRequest request, HttpServletResponse response)
 			throws IllegalStateException, IOException {
-
-		// 글 작성 후 notify 페이지로 다시 이동
-		ModelAndView modelAndView = new ModelAndView("/hire/notify");
 
 		// 파일을 서버에 업로드 및 저장된 파일 경로 구하기
 		String photo = fileService.imgUpload(hireVO.getFile(), request, response);
@@ -83,10 +80,15 @@ public class HireController {
 		// hireVO에 파일 경로 저장
 		hireVO.setPhoto(photo);
 
-		// 글쓰기
-		service.write(hireVO);
-
-		return modelAndView;
+		try {
+			// 글쓰기
+			service.write(hireVO);
+		} catch (Exception e) {
+			
+		}
+		
+		// 글 작성 후 notify 페이지로 다시 이동
+		return "redirect:/hire/notify";
 	}
 
 	// 글 삭제 (여러 글 삭제 가능)

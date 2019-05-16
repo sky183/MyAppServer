@@ -8,6 +8,7 @@ body {
 	padding: 0;
 	margin-bottom: 50px !important;
 	margin: 0;
+	/* 	font-family: 'notokr-regular', '돋움', Dotum, tahoma, sans-serif; */
 }
 
 a {
@@ -49,7 +50,7 @@ img, input, select, textarea {
 	font-family: 'notokr-medium', '돋움', Dotum, tahoma, sans-serif;
 }
 
-input[type="text"], input[type="password"], input[type="date"] {
+input[type="text"], input[type="password"] {
 	padding: 6px 8px 6px 12px;
 	border: 1px solid #e1e1e1;
 	border-radius: 0;
@@ -93,7 +94,7 @@ div {
 }
 
 #titleHeader {
-	max-width: 980px;
+	width: 980px;
 	padding-top: 43px;
 	margin: 0 auto;
 }
@@ -120,10 +121,6 @@ div {
 	right: 0;
 	border-color: #e93c3e;
 	color: #e93c3e;
-}
-
-.headLogo {
-	display: inline-block;
 }
 
 .titleLeft {
@@ -195,14 +192,14 @@ div {
 
 /* notify.jsp */
 .snbVisual {
-	background: url(../img/bg_subVisual2_nt.jpg) right 26% top no-repeat;
+	background: url(../img/bg_subVisual2_nt.jpg) center top no-repeat;
 	position: relative;
 	height: 120px;
 	margin-bottom: 42px;
 }
 
 .textArea {
-	max-width: 980px;
+	width: 980px;
 	margin: 0 auto;
 }
 
@@ -223,7 +220,7 @@ div {
 }
 
 #bottomWrap {
-	max-width: 980px;
+	width: 980px;
 	margin: 0 auto;
 }
 
@@ -369,7 +366,7 @@ div {
 }
 
 #board {
-	max-width: 980px;
+	width: 980px;
 	overflow: hidden;
 	margin-top: 30px;
 }
@@ -387,9 +384,7 @@ div {
 	height: 230px;
 	overflow: hidden;
 }
-/* .list li:nth-child(4n+0) { */
-/* 	margin-right: 0; */
-/* } */
+
 .list li p {
 	overflow: hidden;
 	max-height: 40px;
@@ -441,7 +436,7 @@ div {
 }
 
 #writeWrap {
-	max-width: 980px;
+	width: 980px;
 	margin: 0 auto;
 }
 
@@ -465,149 +460,4 @@ div {
 #frm {
 	width: 600px;
 	margin: 0 auto;
-}
-.visual {
-	display: none;
-}
-
-@media screen and (max-width: 740px) {
-	div.menuicon {
-		width: 21px;
-		height: 3px;
-		background-color: black;
-		margin: 3px 0;
-	}
-	div.micon {
-		display: inline;
-		margin : 5px;
-		position: absolute;
-		cursor: pointer;
-	}
-	
-	.titleRight {
-		display: none !important;
-	}
-}
-
-@media screen and (max-width: 1000px) {
-		.textArea {
-		display: none;
-	}
-		#titleHeader {
-		/* max-width: 980px; */
-		padding-top: 0px;
-		/* margin: 0 auto; */
-	}
-	.titleRight {
-		display: block;
-	}
-	.titleLeft {
-		display: block;
-		width: 230px;
-		height: 71px;
-		margin: 0 auto;
-		margin-bottom: 5px;
-	}
-	.headLogo {
-		display: block;
-		padding: 10px;
-	}
-	#boardMenu #pg3 {
-		margin-left: 0;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.hide {
-		display: none !important;
-	}
-	.listSearchBox {
-		padding: 6px;
-		height: 46px;
-		margin-top: 5px;
-		min-width: 360px;
-	}
-	.listSearchBox select {
-		width: 27%;
-		height: 23px;
-	}
-	.listSearchBox input[type=text] {
-		width: 59%;
-		height: 26px;
-		line-height: 26px;
-	}
-
-	.list li {
-		width: 340px;
-/* 		margin: 0 auto; */
-		margin-bottom: 5px;
-		height: inherit; 
-    overflow: inherit;
-	}
-	.list li img {
-		width: 340px;
-		height: 267px;
-/* 		margin: 0 auto; */
-		display: inline-block;
-	}
-	.snbVisual {
-    position: inherit;
-    height: 77px;
-    background-size: 1000px;
-    margin-bottom: 0px
-	}
-
-	#titleWrapper {
-		position: inherit;
-	}
-	.bottomTitle {
-		padding: 0;
-		margin: 0;
-		text-align: center;
-	}
-	.bottomTitle h1 {
-		font-size: 22px;
-	}
-	.imgBottom {
-		background: url(../img/youth_recurite.png) no-repeat;
-		height: 112px;
-		background-size: 100%;
-		width: 343px;
-		margin: 10px auto;
-	}
-	.imgBottom h1 {
-    font-size: 18px !important;
-    margin: 10px 5px 5px !important;
-	}
-	
-	.imgBottom h1 ~ b {
-    color: #004070;
-    text-align: center;
-    font-size: 11px;
-		margin-top: 20px;
-	}
-	#board {
-		margin-top: 10px;
-	}
-	#boardMenu {
-    text-align: right;
-    width: 360px;
-    margin: 10px auto 0 auto;
-	}
-	
-	.content {
-		max-width: 340px;
-		display: block;
-		margin: 0 auto;
-	}
-	
-	.content * {
-		float: none;
-	}
-	.board_view input {
-    width: 279px;
-}
-#frm {
-    width: 360px;
-}
 }
